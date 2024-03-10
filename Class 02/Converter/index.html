@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converter</title>
+    <style>
+      h1 {
+        text-align: center;
+        color: aquamarine;
+      }
+      h3 {
+        text-align: center;
+        color: blueviolet;
+      }
+      p {
+        margin: 0 auto;
+        text-align: center;
+        color: aqua;
+        border: 5px solid blue;
+        border-radius: 5px;
+        width: 300px;
+        background-color: black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Converter</h1>
+    <h3>Currency Converter USD to BDT</h3>
+    <h3>BMI</h3>
+    <h3>Meter to CM</h3>
+    <p>Check Console</p>
+    <script>
+      let Converter = {
+        currencyConverter: function (amount, exchangeRate) {
+          const convertedAmount = amount * exchangeRate;
+          return convertedAmount.toFixed(2);
+        },
+        bmiConverter: function (weight, height) {
+          const bmi = weight / (height * height);
+          return bmi.toFixed(2);
+        },
+        meterToCmConverter: function (meter) {
+          return meter * 100;
+        },
+      };
+
+      // Example usage:
+      const amountInUSD = 100;
+      const exchangeRate = 92.5;
+      const bdtAmount = Converter.currencyConverter(amountInUSD, exchangeRate);
+      console.log(`${amountInUSD} USD is equal to ${bdtAmount} BDT.`);
+
+      const weightInKg = 85;
+      const heightInM = 1.73;
+      const bmi = Converter.bmiConverter(weightInKg, heightInM);
+      console.log(`BMI: ${bmi}`);
+
+      const lengthInMeter = 2;
+      const lengthInCm = Converter.meterToCmConverter(lengthInMeter);
+      console.log(
+        `${lengthInMeter} meters is equal to ${lengthInCm} centimeters.`
+      );
+    </script>
+  </body>
+</html>
